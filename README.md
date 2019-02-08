@@ -23,25 +23,6 @@
 - Code Syntax highlighting
 - Responsive
 
-## Installing
-
-### Using Git
-1. Navigate to your Ghost theme directory `ghost/content/themes`
-2. Clone the theme repository
-```sh
-$ git clone https://github.com/jamesramsay/ghost-incorporated incorporated
-```
-3. Restart ghost and log in to your dashboard
-4. In settings under themes select **Incorporated** and save
-
-
-### Manually
-1. Download as a `.zip` or `.tar.gz` from the [latest release](https://github.com/jamesramsay/ghost-incorporated/releases/latest)
-2. Unzip the files and rename the folder to `incorporated`
-4. Copy the folder into your Ghost theme directory `ghost/content/themes`
-5. Restart ghost and log in to your dashboard
-4. In settings under themes select **Incorporated** and save
-
 ## Configuring
 
 All configurable files are located in `/partials`.
