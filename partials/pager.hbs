@@ -1,0 +1,24 @@
+	<footer class="navigation post-navigation" role="navigation">
+		<div class="nav-links">
+			{{#prev_post}}
+			<div class="nav-previous">
+				<a href="{{url}}" rel="prev">
+					<div class="the-navigation-arrow"><i class="fa prev-next fa-lg fa-angle-left"></i></div> 
+					<div class="meta-nav"><span class="small-part">Previous Post</span>
+						<div class="next-prev-name">{{title}}</div>
+					</div>
+				</a>
+			</div>
+			{{/prev_post}}
+			{{#next_post}}
+			<div class="nav-next">
+				<a href="{{url}}" rel="next">
+					<div class="meta-nav"><span class="small-part">Next Post</span>
+						<div class="next-prev-name">{{title}}</div>
+					</div>
+					<div class="the-navigation-arrow"><i class="fa prev-next fa-lg fa-angle-right"></i></div>
+				</a>
+			</div>
+			{{/next_post}}
+		</div>
+	</footer>

@@ -1,0 +1,44 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The big featured header }}
+
+{{! Everything inside the #author tags pulls data from the author }}
+{{#author}}
+<div class="blog-cover author-cover" {{#if cover_image}}style="background-image: url({{cover_image}})"{{else}}{{#if @site.cover_image}}style="background-image: url({{@site.cover_image}})"{{/if}}{{/if}}>
+        <section>
+            <div class="container">
+                {{#if profile_image}}<img src="{{profile_image}}">{{/if}}
+                <h1>{{name}}</h1>
+                <h3>{{{bio}}}</h3>
+				<nav class="social">
+					<a class="icon-tw" href='{{twitter_url}}' target="_blank"><i class="fab fa-twitter fa-sm"></i></a>
+					<a class="icon-li" href='{{website}}' target="_blank"><i class="fab fa-linkedin-in fa-sm"></i></a>				
+				</nav>				
+            </div>
+        </section>
+</div>
+{{/author}}		
+
+
+
+{{! This is the post loop - each post will be output using this markup }}
+<article class="container">
+{{#author}}
+        <section class="index xs-show">
+            <div class="bio">
+                {{#if profile_image}}<img src="{{profile_image}}">{{/if}}
+                <h1>{{name}}</h1>
+                <p><span class="muted">{{bio}}</span></p>
+				<nav class="social">
+					<a class="icon-tw" href='{{twitter_url}}' target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a>
+					<a class="icon-li" href='{{website}}' target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>	
+				</nav>				
+            </div>
+        </section>
+{{/author}}		
+	
+    {{> loop }}
+	
+    {{pagination}}
+</article>

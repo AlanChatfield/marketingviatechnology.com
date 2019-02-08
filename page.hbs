@@ -1,0 +1,30 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! TODO: Add support for per article cover image }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<div class="blog-cover" {{#if feature_image}}style="background-image: url({{feature_image}})"{{else}}{{#if @site.cover_image}}style="background-image: url({{@site.cover_image}})"{{/if}}{{/if}}>
+    <section>
+        <div class="container">
+            <h1>{{{title}}}</h1>
+            <h3>{{{excerpt}}}</h3>
+        </div>
+    </section>
+</div>
+
+{{! Everything below outputs content of the the post which has been published }}
+<article>
+    <div class="container">
+
+        <section>
+            {{content}}          
+        </section>
+
+    </div>
+</article>
+{{/post}}

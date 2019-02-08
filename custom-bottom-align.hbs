@@ -1,0 +1,80 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<div class="blog-cover bottom-align" {{#if feature_image}}style="background-image: url({{feature_image}})"{{else}}{{#if @site.cover_image}}style="background-image: url({{@site.cover_image}})"{{/if}}{{/if}}>
+    <section>
+        <div class="container">
+            <h1 class="title">{{{title}}}</h1>
+            <h3>{{{excerpt}}}</h3>
+            <div class="social">
+                <a class="icon-tw" href='http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}' target="_blank"><i class="fab fa-twitter fa-sm"></i></a>
+                <a class="icon-li" href='https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}' target="_blank"><i class="fab fa-linkedin-in fa-sm"></i></a>			
+                <a class="icon-fb" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank"><i class="fab fa-facebook-f fa-sm"></i></a>				
+            </div>			
+        </div>
+    </section>			
+</div>
+
+{{! Everything below outputs content of the the post which has been published }}
+<article>
+    <div class="container">
+        <header>
+            <h2 class="title xs-show">{{{title}}}</h2>		
+            <div class="meta">
+                <time pubdate datetime="{{date format="YYYY-MM-DD"}}" title="{{date format='DD MMMM YYYY'}}">{{date format='DD MMMM YYYY'}}</time> {{#if tags}}| {{tags}}{{/if}}
+            </div>			
+        </header>
+
+        <section>
+            {{content}}				
+        </section>
+
+        <footer>
+            <p class="author">
+                {{#if primary_author.profile_image}}<a rel="author" href="/author/{{primary_author.slug}}" title="{{primary_author.name}}"><img src="{{primary_author.profile_image}}"></a>{{/if}}
+                Written by <strong><a rel="author" href="/author/{{primary_author.slug}}" title="{{primary_author.name}}">{{primary_author.name}}</a></strong><br>
+                <span class="muted">{{{primary_author.bio}}}</span>
+            </p>
+        </footer>
+
+        <section class="xs-show">
+            <div class="social xs-show">
+                <a class="icon-tw" href='http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}' target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <a class="icon-li" href='https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}' target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>			
+                <a class="icon-fb" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>						
+            </div>				
+        </section>
+		
+	{{> pager }}			
+	<section>
+		<div id="disqus_thread"></div>
+		<script>
+
+		/**
+		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+		/*
+		var disqus_config = function () {
+		this.page.url = "{url absolute="true"}}";  // Replace PAGE_URL with your page's canonical URL variable
+		this.page.identifier = "ghost-{{comment_id}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		*/
+		(function() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = 'https://mktgviatech.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<section>                            
+	
+        {{! TODO: Add disqus support }}
+    </div>
+</article>
+{{/post}}

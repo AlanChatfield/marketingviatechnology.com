@@ -1,0 +1,32 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The big featured header on the homepage, with the site logo and description }}
+{{#tag}}
+<div class="blog-cover index-cover" {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
+    <section>
+        <div class="container">
+            <h1>{{name}}</h1>
+			{{#if description}}
+				<h3>{{description}}</h3>
+			{{else}}
+				<h3>A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}</h3>
+			{{/if}}			          
+            {{> header }}
+        </div>
+    </section>
+</div>
+{{/tag}}
+
+{{! The main content area on the homepage }}
+<article class="container">
+    {{> loop }}
+	
+    {{pagination}}
+</article>
+
+
+
+

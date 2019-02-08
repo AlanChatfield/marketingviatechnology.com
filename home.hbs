@@ -1,0 +1,81 @@
+{{!< defaultlist}}
+
+	<div class="blog-cover index-cover" style="background-image: url(/content/images/2018/11/mountain-road-1556177_rgb-1.jpg);background-position:bottom 20% center">
+		<a href="/blog/">	
+			<section>	
+				<div class="container">
+					<h1>Marketing via Technology</h1>
+					<h3>Views from the intersection of digital marketing and enterprise technology</h3>
+				</div>				
+			</section>
+		</a>			
+	</div>
+	<article class="container grid long">	
+		{{#get "authors" limit="1" as |author|}}	
+			{{#author}}			
+			<section class="index img">
+				<div class="container author">
+					{{#if profile_image}}<img src="{{profile_image}}">{{/if}}
+					<h2>Hello,</h2>
+					<p>{{> biography}}</p>	
+					</nav>				
+				</div>
+			</section>
+			{{/author}}	
+		{{/get}}	
+		{{#get "posts" filter="tag:-[politics,sport]" include="tags" limit="1" as |posts|}}	
+			{{#foreach posts}}	
+				{{> teaser }}		
+	</article>
+
+	<div class="{{primary_tag.slug}}">
+			{{/foreach}}	
+		{{/get}}
+	
+	{{#get "posts" filter="tag:demand-creation,tag:marketing-operations" include="tags" limit="4" as |posts|}}
+		<article class="container grid demand-creation">
+			<nav class="pagination" role="navigation">
+				<a class="older-posts" href="/marketing">See more <span aria-hidden="true">→</span></a>
+			</nav>	
+			<h2>Demand Marketing</h2>
+			<p>Learn, optimise and engage using modern marketing techniques</p>
+				{{#foreach posts}}		
+					{{> teaser }}
+				{{/foreach}}			
+		</article>	
+	{{/get}}
+	{{#get "posts" filter="tag:digital-transformation" include="tags" limit="4" as |posts|}}
+		<article class="container grid digital-transformation">
+			<nav class="pagination" role="navigation">	
+				<a class="older-posts" href="/technology">See more <span aria-hidden="true">→</span></a>
+			</nav>	
+			<h2>Digital Transformation</h2>
+			<p>Commentary on enterprise technology and it's impact on marketers</p>
+				{{#foreach posts}}		
+					{{> teaser }}
+				{{/foreach}}	
+		</article>
+	{{/get}}	
+	{{#get "posts" filter="tag:marketing-automation" include="tags" limit="4" as |posts|}}
+		<article class="container grid marketing-automation">
+			<nav class="pagination" role="navigation">	
+				<a class="older-posts" href="/martech">See more <span aria-hidden="true">→</span></a>
+			</nav>	
+			<h2>Marketing Technology</h2>
+			<p>News and tips from an expert in marketing automation</p>
+				{{#foreach posts}}		
+					{{> teaser }}
+				{{/foreach}}
+		</article>
+	{{/get}}
+	<article class="container grid noimg opinion">	
+		<nav class="pagination" role="navigation">	
+			<a class="older-posts" href="/opinion">See more <span aria-hidden="true">→</span></a>
+		</nav>		
+		<h2>News & Current Affairs</h2>
+		<p>Random asides and other off-topic thoughts about sport, politics and global affairs</p>
+		{{#get "posts" filter="tag:politics,tag:sport" include="tags" limit="3" as |posts|}}
+			{{> loop }}	
+		{{/get}}	
+	</article>
+	</div>

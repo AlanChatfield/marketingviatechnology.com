@@ -1,0 +1,32 @@
+article .title {
+    font-size: 1.4em;
+}
+.index > div {
+    max-height: 270px;
+	height: 270px;
+	position: relative;
+}
+article p {
+    font-size: 15px;
+}
+.index .avatar {
+    height: 195px;
+    max-width: 325px;
+    min-width: 325px;
+}
+.index {
+    flex-direction: column;
+    max-width: 325px;
+    float: left;
+	margin: 0 0.9em 3em;
+}
+article .index .meta, article .index .meta {
+    position: absolute;
+    bottom: 20px;
+}
+article > h2 {
+    margin: 0em 0.6em 0.4em;
+}
+article > p {
+    margin: 0em 0.9em 1.5em;
+}

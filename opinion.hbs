@@ -1,0 +1,19 @@
+{{!< default}}
+
+	<div class="blog-cover index-cover" style="background-image: url(/content/images/2018/11/pexels-photo-1166657.jpeg);">
+		<a href="/about/">	
+			<section style="background-color: rgba(0, 0, 0, 0.5)">	
+				<div class="container">
+					<h1>News & Current Affairs</h1>
+					{{#if @blog.description}}<h3>The personal blog of Alan Chatfield</h3>{{/if}}
+				</div>				
+			</section>
+		</a>			
+	</div>
+
+{{! The main content area on the homepage }}
+<article class="container">
+    {{> loop }}
+	
+    {{pagination }}	
+</article>
