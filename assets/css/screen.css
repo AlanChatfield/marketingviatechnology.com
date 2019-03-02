@@ -340,9 +340,9 @@ article.grid .index:nth-of-type(4) {display: none !important;}
 .digital-transformation article.grid.digital-transformation .index:nth-of-type(1), .information-technology article.grid.digital-transformation .index:nth-of-type(1) {display: none !important;}
 .digital-transformation article.grid.digital-transformation .index:nth-of-type(4), .information-technology article.grid.digital-transformation .index:nth-of-type(4) {display: flex !important;}
 article.grid .index .meta {position: absolute;bottom: 20px;}
-article.grid > h2 {margin: 0em 0.6em 0.4em;max-width: 680px;}
-article.grid > p {margin: 0em 0.95em 1.5em;max-width: 680px;}
-article.grid .pagination {max-width: 325px;float: right;}
+section.info.grid > h2 {margin: 0em 0.6em 0.4em;max-width: 680px;}
+section.info.grid > p {margin: 0em 0.95em 1.5em;max-width: 680px;}
+section.info.grid .pagination {max-width: 325px;float: right;}
 article.grid.noimg .img img {display: none}
 article.long {padding-bottom: 0px;padding-top: 1.5em;}
 article.long .index:last-of-type > div {max-height: 175px;height: 175px;position: relative;}
@@ -442,8 +442,8 @@ article .container>footer.post-navigation {border: none;padding-top: 2.5em;paddi
 	.site-footer nav.social {display: none}
 	.site-footer nav.social.links,.site-footer nav.copyright{width:50%;display: block; font-size:12px; padding:0;margin-top:0em;}
 	.pagination{padding: 1em 2em;margin-top: -2em;margin-bottom: 3em;}
-	article.grid .pagination .older-posts {border: none;}
-	article.grid .pagination {padding: 1em 0.5em 0;margin-top: -1.2em;margin-bottom: 0em;}
+	section.info.grid .pagination .older-posts {border: none;}
+	section.info.grid .pagination {padding: 1em 0.5em 0;margin-top: -1.2em;margin-bottom: 0em;}
 	.index{padding:0;margin:0;padding:0px;box-shadow:none;display: block;}
 	.container>section.index, article.long .index:last-of-type, article.long .index:first-of-type, article.grid .index{margin:0;max-width: none;}
 	article.long .index:last-of-type, article.long .index:first-of-type, article.grid .index{max-width: none;}
