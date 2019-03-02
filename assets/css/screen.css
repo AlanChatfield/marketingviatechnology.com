@@ -257,7 +257,7 @@ body.nav-hidden .site-nav{top:-100px;transition:all 0.35s ease;-webkit-transform
 article{padding:2em 0;font-size:16px}
 .index-cover+article{padding-top:1.5em;}
 article+article{padding:0px}
-article.grid { padding: 0px }
+article.grid { padding: 0px; display: flex;}
 article .container>header,article .container>section,article .container>footer{margin:0 7.5em;padding: 2.5em 4em;background: #fff;}
 article .container>header { padding-bottom: 0; margin-bottom: 0px; }
 article .container>section { margin-top: 0px; padding-top: 1em; }
@@ -344,7 +344,7 @@ section.info.grid > h2 {margin: 0em 0.6em 0.4em;max-width: 680px;}
 section.info.grid > p {margin: 0em 0.95em 1.5em;max-width: 680px;}
 section.info.grid .pagination {max-width: 325px;float: right;}
 article.grid.noimg .img img {display: none}
-article.long {padding-bottom: 0px;padding-top: 1.5em;}
+article.long {padding-bottom: 0px;padding-top: 1.5em;display:block;}
 article.long .index:last-of-type > div {max-height: 175px;height: 175px;position: relative;}
 article.long .index > div.author {max-height: 375px;height: 375px;position: relative;}
 article.long .index > div.author h2 {margin: 0.75em 0 1em 0.25em;}
