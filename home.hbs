@@ -33,13 +33,13 @@
 		{{/get}}
 	
 	{{#get "posts" filter="tag:demand-creation,tag:marketing-operations" include="tags" limit="4" as |posts|}}
-		<section class="container grid info">
+		<article class="container info">
 			<nav class="pagination" role="navigation">
 				<a class="older-posts" href="/marketing">See more <span aria-hidden="true">→</span></a>
 			</nav>	
 			<h2>Demand Marketing</h2>
 			<p>Learn, optimise and engage using modern marketing techniques</p>
-		</section>			
+		</article>			
 		<article class="container grid demand-creation">			
 				{{#foreach posts}}		
 					{{> teaser }}
@@ -47,13 +47,13 @@
 		</article>	
 	{{/get}}
 	{{#get "posts" filter="tag:digital-transformation" include="tags" limit="4" as |posts|}}
-		<section class="container grid info">	
+		<article class="container info">	
 			<nav class="pagination" role="navigation">	
 				<a class="older-posts" href="/technology">See more <span aria-hidden="true">→</span></a>
 			</nav>	
 			<h2>Digital Transformation</h2>
 			<p>Commentary on enterprise technology and it's impact on marketers</p>
-		</section>
+		</article>
 		<article class="container grid digital-transformation">			
 				{{#foreach posts}}		
 					{{> teaser }}
@@ -61,26 +61,26 @@
 		</article>
 	{{/get}}	
 	{{#get "posts" filter="tag:marketing-automation" include="tags" limit="4" as |posts|}}
-		<section class="container grid info">		
+		<article class="container info">		
 			<nav class="pagination" role="navigation">	
 				<a class="older-posts" href="/martech">See more <span aria-hidden="true">→</span></a>
 			</nav>	
 			<h2>Marketing Technology</h2>
 			<p>News and tips from an expert in marketing automation</p>
-		</section>	
+		</article>	
 		<article class="container grid marketing-automation">			
 				{{#foreach posts}}		
 					{{> teaser }}
 				{{/foreach}}
 		</article>
 	{{/get}}
-	<section class="container grid info">	
+	<article class="container info">	
 		<nav class="pagination" role="navigation">	
 			<a class="older-posts" href="/opinion">See more <span aria-hidden="true">→</span></a>
 		</nav>		
 		<h2>News & Current Affairs</h2>
 		<p>Random asides and other off-topic thoughts about sport, politics and global affairs</p>
-	</section>		
+	</article>		
 	<article class="container grid noimg opinion">			
 		{{#get "posts" filter="tag:politics,tag:sport" include="tags" limit="3" as |posts|}}
 			{{> loop }}	
