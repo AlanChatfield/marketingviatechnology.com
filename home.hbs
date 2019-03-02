@@ -10,6 +10,11 @@
 			</section>
 		</a>			
 	</div>
+	{{#get "posts" filter="tag:-[politics,sport]" include="tags" limit="1" as |posts|}}	
+		{{#foreach posts}}	
+<div class="{{primary_tag.slug}}">
+		{{/foreach}}	
+	{{/get}}	
 	<article class="container grid long">	
 		{{#get "authors" limit="1" as |author|}}	
 			{{#author}}			
@@ -27,8 +32,6 @@
 			{{#foreach posts}}	
 				{{> teaser }}		
 	</article>
-
-	<div class="{{primary_tag.slug}}">
 			{{/foreach}}	
 		{{/get}}
 	
