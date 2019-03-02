@@ -442,8 +442,8 @@ article .container>footer.post-navigation {border: none;padding-top: 2.5em;paddi
 	.site-footer nav.social {display: none}
 	.site-footer nav.social.links,.site-footer nav.copyright{width:50%;display: block; font-size:12px; padding:0;margin-top:0em;}
 	.pagination{padding: 1em 2em;margin-top: -2em;margin-bottom: 3em;}
-	section.info.grid .pagination .older-posts {border: none;}
-	section.info.grid .pagination {padding: 1em 0.5em 0;margin-top: -1.2em;margin-bottom: 0em;}
+	article.info .pagination .older-posts {border: none;}
+	article.info .pagination {padding: 1em 0.5em 0;margin-top: -1.2em;margin-bottom: 0em;}
 	.index{padding:0;margin:0;padding:0px;box-shadow:none;display: block;}
 	.container>section.index, article.long .index:last-of-type, article.long .index:first-of-type, article.grid .index{margin:0;max-width: none;}
 	article.long .index:last-of-type, article.long .index:first-of-type, article.grid .index{max-width: none;}
@@ -459,10 +459,10 @@ article .container>footer.post-navigation {border: none;padding-top: 2.5em;paddi
 	.index p { margin: 0 0 .6em; }
 	.index .title {   margin: 0 0 .6em; font-size: 1.5em; line-height: 1.2em;}
 	.index .meta { display: none; }	
-	article.grid {display: block; }
+	article.grid {flex-direction: column; }
 	article.grid .index:last-of-type > div, article.grid .index > div, article.long .index > div.author { max-height: none; height: auto; padding: 0.8em 0.8em 1.2em }
 	article .index > a {  min-width: 100%;	}
-	article.grid .index > a {  min-width: 100%; display: inline-block;	}
+	article.grid .index > a {  min-width: 100%; display: inline-block;}
 	article .index:hover {	box-shadow: none;}
 	article.grid .index .meta { position: initial; }
 	article .container>footer.post-navigation {border: none;padding-top: 1em;padding-bottom: 2.5em;}
@@ -476,9 +476,9 @@ article .container>footer.post-navigation {border: none;padding-top: 2.5em;paddi
 	.blog-cover section .container { margin-top: 0px;}
 	.site-nav nav {padding: 15px 0px;height: 60px;}
 	.home-template .blog-cover { display: none; }
-	.home-template article.grid .pagination {padding: 1em 0.5em 0;margin-top: 0.2em;margin-bottom: 0em;}
-	.home-template article.grid > h2 {padding: 1em 0.6em 1em;max-width: 680px;margin: 0;background: #eef4f4;color: #333;}
-	.home-template article.grid > p {display: none;}
+	.home-template article.info .pagination {padding: 1em 0.5em 0;margin-top: 0.2em;margin-bottom: 0em;}
+	.home-template article.info > h2 {padding: 1em 0.6em 0.6em;max-width: 680px;margin: 0;background: #eef4f4;color: #333;}
+	.home-template article.info > p {padding: 0em 0.9em 1em;background: #eef4f4;max-width: 680px;margin: 0;color: #333;font-size:14px}
 	.container.noimg>section.index { margin-bottom:0em; }
 	.container.noimg>section.index:last-child { margin-bottom:1.5em; }	
 }
