@@ -427,7 +427,7 @@ article .container>footer.post-navigation {border: none;padding-top: 2.5em;paddi
 	.index-cover h1 { font-size: 1.8em;line-height: 1.2em;margin: 0 0.6em 0.3em;font-weight: 700;}
 	.home-template .blog-cover h3 { font-size: 0.95em;margin: 0 0.6em;}	
 	.home-template .blog-cover .btn.btn-outline { color: #fff;border: 1.5px solid #fff;margin-top: 0.6em;padding: 0.3em 0.8em;font-weight: 400;text-transform: none;font-size: 0.8em;font-family: 'Open Sans';display:inline-block}
-	.site-nav {position: absolute;height:60px;background:#004225;}
+	.site-nav {position: absolute;height:60px;background:#109954;}
 	.site-nav .tagline span, .site-nav .tagline em{display:none}
 	.site-nav #navigation #brand{font-size: 17px;color:#fff;font-weight: 600;}
 	.site-nav #navigation #brand span{display: inline-block;line-height: 15.75px;height: 34px;}
@@ -459,6 +459,7 @@ article .container>footer.post-navigation {border: none;padding-top: 2.5em;paddi
 	.index p { margin: 0 0 .6em; }
 	.index .title {   margin: 0 0 .6em; font-size: 1.5em; line-height: 1.2em;}
 	.index .meta { display: none; }	
+	article.grid {display: block; }
 	article.grid .index:last-of-type > div, article.grid .index > div, article.long .index > div.author { max-height: none; height: auto; padding: 0.8em 0.8em 1.2em }
 	article .index > a {  min-width: 100%;	}
 	article.grid .index > a {  min-width: 100%; display: inline-block;	}
