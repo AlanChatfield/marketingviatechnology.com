@@ -51,16 +51,10 @@
         </section>
 		
 	{{> pager }}			
-	<section>
-		<script>talkyardServerUrl='https://comments-for-alanchatfield-net.talkyard.net';</script>
-		<script async defer src="https://c1.ty-cdn.net/-/talkyard-comments.min.js"></script>
-		<!-- You can specify a per page discussion id on the next line, if your URLs might change. -->
-		<div class="talkyard-comments" data-discussion-id="ghost-{{comment_id}}" style="margin-top: 45px;">
-		<noscript>Please enable Javascript to view comments.</noscript>
-		<p style="margin-top: 25px; opacity: 0.9; font-size: 96%">Comments powered by
-		<a href="https://www.talkyard.io">Talkyard</a>.</p>
-		</div>
-	<section>                            
+	<section data-page="{{comment_id}}">
+		<div class="just-comments" data-recaptcha="true" data-apikey="49881679-0fc7-401c-b7b6-3778b1f19630" ></div>
+		<script async src="https://just-comments.com/w.js"></script>	
+	</section>                            
 	
         {{! TODO: Add disqus support }}
     </div>
