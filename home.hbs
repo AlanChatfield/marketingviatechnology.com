@@ -1,6 +1,6 @@
 {{!< defaultlist}}
 
-	<div class="blog-cover index-cover" style="background-image: url(/content/images/2018/11/mountain-road-1556177_rgb-1.jpg);background-position:bottom 20% center">
+	<header class="blog-cover index-cover" style="background-image: url(/content/images/2018/11/mountain-road-1556177_rgb-1.jpg);background-position:bottom 20% center">
 		<a href="/blog/">	
 			<section>	
 				<div class="container">
@@ -9,10 +9,10 @@
 				</div>				
 			</section>
 		</a>			
-	</div>
+	</header>
 	{{#get "posts" filter="tag:-[politics,sport]" include="tags" limit="1" as |posts|}}	
 		{{#foreach posts}}	
-<div class="{{primary_tag.slug}}">
+<main class="{{primary_tag.slug}}">
 		{{/foreach}}	
 	{{/get}}	
 	<article class="container grid long">	
@@ -89,4 +89,4 @@
 			{{> loop }}	
 		{{/get}}	
 	</article>
-	</div>
+</main>
