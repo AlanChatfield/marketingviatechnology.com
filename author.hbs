@@ -5,7 +5,7 @@
 
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-<div class="blog-cover author-cover" {{#if cover_image}}style="background-image: url({{cover_image}})"{{else}}{{#if @site.cover_image}}style="background-image: url({{@site.cover_image}})"{{/if}}{{/if}}>
+<header class="blog-cover author-cover" {{#if cover_image}}style="background-image: url({{cover_image}})"{{else}}{{#if @site.cover_image}}style="background-image: url({{@site.cover_image}})"{{/if}}{{/if}}>
         <section>
             <div class="container">
                 {{#if profile_image}}<img src="{{profile_image}}">{{/if}}
@@ -17,13 +17,13 @@
 				</nav>				
             </div>
         </section>
-</div>
+</header>
 {{/author}}		
 
 
 
 {{! This is the post loop - each post will be output using this markup }}
-<article class="container">
+<main class="container">
 {{#author}}
         <section class="index xs-show">
             <div class="bio">
@@ -41,4 +41,4 @@
     {{> loop }}
 	
     {{pagination}}
-</article>
+</main>
