@@ -6,7 +6,7 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
-<div class="blog-cover top-align" {{#if feature_image}}style="background-image: url({{feature_image}})"{{else}}{{#if @site.cover_image}}style="background-image: url({{@site.cover_image}})"{{/if}}{{/if}}>
+<header class="blog-cover top-align" {{#if feature_image}}style="background-image: url({{feature_image}})"{{else}}{{#if @site.cover_image}}style="background-image: url({{@site.cover_image}})"{{/if}}{{/if}}>
     <section>
         <div class="container">
             <h1 class="title">{{{title}}}</h1>
@@ -18,21 +18,19 @@
             </div>			
         </div>
     </section>			
-</div>
+</header>
 
 {{! Everything below outputs content of the the post which has been published }}
-<article>
-    <div class="container">
+<main class="container">
+    <article>
         <header>
             <h2 class="title xs-show">{{{title}}}</h2>		
             <div class="meta">
                 <time pubdate datetime="{{date format="YYYY-MM-DD"}}" title="{{date format='DD MMMM YYYY'}}">{{date format='DD MMMM YYYY'}}</time> {{#if tags}}| {{tags}}{{/if}}
             </div>			
         </header>
-
-        <section>
-            {{content}}				
-        </section>
+	
+        {{content}}				
 
         <footer>
             <p class="author">
@@ -42,39 +40,15 @@
             </p>
         </footer>
 
-        <section class="xs-show">
-            <div class="social xs-show">
-                <a class="icon-tw" href='http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}' target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a>
-                <a class="icon-li" href='https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}' target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>			
-                <a class="icon-fb" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>						
-            </div>				
-        </section>
+    </article>
 		
-	{{> pager }}		
-	<section>
-		<div id="disqus_thread"></div>
-		<script>
-
-		/**
-		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-		/*
-		var disqus_config = function () {
-		this.page.url = "{url absolute="true"}}";  // Replace PAGE_URL with your page's canonical URL variable
-		this.page.identifier = "ghost-{{comment_id}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-		};
-		*/
-		(function() { // DON'T EDIT BELOW THIS LINE
-		var d = document, s = d.createElement('script');
-		s.src = 'https://mktgviatech.disqus.com/embed.js';
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s);
-		})();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	<section>                            
+	{{> pager }}
+	
+	<aside data-page="{{comment_id}}">
+		<div class="just-comments" data-apikey="49881679-0fc7-401c-b7b6-3778b1f19630" ></div>
+		<script async src="https://just-comments.com/w.js"></script>	
+	</aside>                            
 	
         {{! TODO: Add disqus support }}
-    </div>
-</article>
+</main>
 {{/post}}
