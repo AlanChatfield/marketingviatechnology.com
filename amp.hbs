@@ -55,17 +55,17 @@
 			
             <section class="post-content">
 
-                {{content}}
-			
-				
-				<p class="author">Written by <a rel="author" href="/author/{{primary_author.slug}}" title="{{primary_author.name}}">{{primary_author.name}}</a><br>
-                <span class="muted">{{{primary_author.bio}}}</span></p>
+                {{amp_content}}
 
 				<div class="social">
 					<a class="icon-tw" href='http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}' target="_blank"><i class="fa fa-twitter-square fa-3"></i></a>
 					<a class="icon-li" href='https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}' target="_blank"><i class="fa fa-linkedin-square fa-3"></i></a>			
 					<a class="icon-fb" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank"><i class="fa fa-facebook-square fa-3"></i></a>		
-				</div>					
+				</div>				
+				
+				<p class="author">Written by <a rel="author" href="/author/{{primary_author.slug}}" title="{{primary_author.name}}">{{primary_author.name}}</a><br>
+                <span class="muted">{{{primary_author.bio}}}</span></p>
+				
             </section>
 
         </article>
