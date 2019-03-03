@@ -443,7 +443,7 @@ main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-b
 	.site-footer{margin-top:0;padding:1.5em 0.5em;text-align:center}
 	.site-footer nav.social {display: none}
 	.site-footer nav.social.links,.site-footer nav.copyright{width:50%;display: block; font-size:12px; padding:0;margin-top:0em;}
-	.pagination{padding: 1em 0.5em;margin-bottom: 3em;}
+	main.container .pagination, .pagination{padding: 1em 0.5em;margin-bottom: 3em;}
 	article.info .pagination .older-posts {border: none;}
 	article.info .pagination {padding: 1em 0.5em 0;margin-top: -1.2em;margin-bottom: 0em;}
 	.index{padding:0;margin:0;padding:0px;display: block;}
