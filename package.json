@@ -1,7 +1,7 @@
 {
   "name": "incorporated",
   "description": "A Ghost theme which provides great typography, responsive design, author details, semantic markup and more. At this time it is for the most part a port by James Ramsay of Jekyll Incorporated by Kippt, Inc.",
-  "version": "2.2.0",
+  "version": "2.5.0",
   "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"
