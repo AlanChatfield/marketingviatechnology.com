@@ -451,7 +451,6 @@ main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-b
 	.index{padding:0;margin:0;padding:0px;display: block;}
 	.container>.index, article.long .index:last-of-type, article.long .index:first-of-type, article.grid .index{margin:0.5em;max-width: none;padding:0px;}
 	article.long .index:last-of-type, article.long .index:first-of-type, article.grid .index{max-width: none;}
-	.container>.index,  article.long .index:first-of-type, article.long .index:last-of-type {margin-bottom: 1.5em;padding-bottom:0px}
 	.index.img {padding: 0 0.6em 1.2em;background: none !important}	
 	.index>div{margin:0;padding:1em 1.5em;max-height:none;}
 	.index img{display:none}
@@ -464,6 +463,7 @@ main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-b
 	.index .title {   margin: 0 0 .6em; font-size: 1.5em; line-height: 1.2em;}
 	.index .meta { display: none; }	
 	article.grid {flex-direction: column; }
+	article.long { padding-top: 0.5em;}
 	article.grid .index:last-of-type > div, article.grid .index > div, article.long .index > div.author { max-height: none; height: auto; padding: 0.8em 0.8em 1.2em }
 	main .index > span {  min-width: 100%;	}
 	article.grid .index > span {  min-width: 100%; display: block;}
