@@ -411,6 +411,8 @@ main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-b
 	main.container>header,main.container>article,main.container>footer,main.container>aside{padding: 1em 1.5em;margin:0.5em;}
 	main .full,main pre{margin:1em 0}
 	main address { max-height: none}
+	main .bio img { display: block; border-radius: 100%; }
+	.blog-cover.author-cover{display: none;}
 	main pre{padding:1em}
 	main blockquote{margin:1em 0}
 	main blockquote p{font-size:1em}
