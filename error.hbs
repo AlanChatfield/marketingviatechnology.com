@@ -7,22 +7,20 @@
 
 {{! Everything inside the #post tags pulls data from the post }}
 
-<header class="blog-cover" {{#if @site.cover_image}}style="background-image: url('/content/images/2018/11/mountain-road-1556177_rgb-1.jpg')"{{/if}}>
+<header class="blog-cover index-cover" style="background-image: url(/content/images/2018/11/mountain-road-1556177_rgb-1.jpg);background-position:bottom 20% center">
     <section>
         <div class="container">
-            <h1>{{@site.title}}</h1>
-            {{#if @site.description}}<h3>{{@site.description}}</h3>{{/if}}
-            {{> header }}
+			<h1>Marketing via Technology</h1>
+			<h3>Views from the intersection of digital marketing and enterprise technology</h3>
         </div>
     </section>
 </header>
 
 {{! Everything below outputs content of the the post which has been published }}
 <main class="container">
-
-        <article>
-                    <h1 class="error-code">{{code}}</h1>
-                    <p class="error-description">{{message}}</p>
-                    <a class="error-link" href="{{@site.url}}">Go to the front page →</a>          
-        </article>
+    <article>
+        <h1 class="error-code">{{code}}</h1>
+        <p class="error-description">{{message}}</p>
+        <a class="error-link" href="{{@site.url}}">Go to the front page →</a>          
+    </article>
 </main>
