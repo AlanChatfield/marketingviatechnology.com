@@ -324,7 +324,7 @@ main .full.zoomable img.zoom{-webkit-transform:scale(1.2);transition:0.4s all ea
 article.grid .title { font-size: 1.4em; }
 article.grid .index > div {max-height: 270px;height: 270px;position: relative;}
 article.grid p {font-size: 15px;}
-article.grid .index .avatar {height: 195px;max-width: 295px;min-width: 0;width: 295px;}
+article.grid .index .avatar {height: 195px;max-width: 331px;min-width: 331px;}
 main .index > span {background-color: #004225; transition: transform 0.5s;overflow: hidden;min-width: 325px;display: block;}
 @media (hover) {
 	main .index:hover {box-shadow: 0 0 2px rgba(0,0,0,.5);}
@@ -346,14 +346,14 @@ article.info > p {margin: 0em 0.95em 1.5em;max-width: 680px;}
 article.info .pagination {max-width: 325px;float: right;}
 article.grid.noimg .img img {display: none}
 article.long {padding-bottom: 0px;padding-top: 1.5em;flex-direction: row-reverse;}
-article.long .index:last-of-type > div {max-height: 200px;height: 200px;position: relative;}
+article.long .index:last-child > div {max-height: 200px;height: 200px;position: relative;}
 article.long .index > div.author {max-height: 375px;height: 375px;position: relative;}
 article.long .index > div.author h2 {margin: 0.75em 0 1em 0.25em;}
 article.long .index > div.author p {margin-top: 2.5em;}
 article.long .index > div.author .social a.btn-outline {padding: 0.4em 0.8em;margin-top: 0.8em;	display: inline-block;}
-article.long .index:last-of-type .avatar {height: 200px;max-width: 692px;min-width: 692px;}
-article.long .index:last-of-type .avatar.custom-bottom {object-position: bottom;}
-article.long .index:last-of-type .avatar.custom-top {object-position: top;}	
+article.long .index:last-child .avatar {height: 200px;max-width: 692px;min-width: 692px;}
+article.long .index:last-child .avatar.custom-bottom {object-position: bottom;}
+article.long .index:last-child .avatar.custom-top {object-position: top;}	
 article.long .index:last-child {flex-direction: column;max-width: 692px; float: left;margin: 0 0.9em 3em;}
 article.long .index:first-child {float: right;margin-right: 0.33em;}
 main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-bottom: 2.5em;box-shadow: 0 0 2px rgba(0,0,0,.1);}	
