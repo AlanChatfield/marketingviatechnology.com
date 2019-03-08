@@ -387,7 +387,7 @@ main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-b
 	article.long .index:last-child .avatar, article.grid .index .avatar { max-width: 310px; min-width: 310px; width: 310px }
 	article.long .index:last-of-type .avatar { height: 175px; }
 	article.grid .index { margin-left:0.5em; margin-right:0.5em; width:310px; }
-	article.grid .index:first-child { margin-right:0.33em; }
+	article.long .index:first-child { margin-right:0.33em; }
 	article.long .index:last-child { margin-left:0.33em; margin-right:0.5em;  width:637px; }
 	article.long .index:last-child .avatar { max-width: 637px; min-width: 637px; width: 637px }
 	article.grid .index > div {max-height: 300px; height: 300px; position: relative; }
@@ -420,10 +420,10 @@ main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-b
 	.index .avatar{float: left;border-radius: 0px;height: 225px;width: 250px;max-width: 250px;min-width: 250px;margin: 0;object-fit: cover;}	
 	.index .avatar.custom-bottom {object-position: bottom;}
 	main .index > span {  min-width: 250px;	}
-	article.long .index:last-child, article.long .index:first-child, article.grid .index { width: auto; max-width: 46.15%; }
 	article.grid .index:nth-of-type(3), article.long .index:last-child .meta  { display: none }
 }
 @media (max-width: 767px){
+	article.long .index:last-child, article.long .index:first-child, article.grid .index { width: auto; }	
 	article.grid .index:nth-of-type(3), article.long .index:last-child .meta  { display: block }
 	main{padding:0px}
 	.page-template main, .post-template main {padding:0;}
