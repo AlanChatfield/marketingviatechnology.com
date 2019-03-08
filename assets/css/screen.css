@@ -169,11 +169,11 @@ a:hover{color:#00578A;text-decoration:none}
 .article-cover,.blog-cover{max-width:100%;margin-top:0;position:relative;max-height:460px;overflow:hidden;background:#fff}
 .article-cover>div,.blog-cover>div{max-height:480px;line-height:0}
 .article-cover .image,.blog-cover .image{width:100%;top:0;position:relative}
-.index{margin:0 0.9em 1.5em;box-shadow: 0 0 2px rgba(0,0,0,.1);background: #fff;display:flex;}
+.index{margin:0 0.9em 1.5em;box-shadow: 0 0 2px rgba(0,0,0,.1);background: #fff;display: flex;width: 31.33%;}
 .index>div{display:block;padding: 1.5em 2em 1.5em;max-height: 195px;background: #fff;display:inline-block;align-self:center;}
 .index .title{margin:0em 0 0.6em}
 .index>div p {margin-bottom: 0.96em;line-height:1.6}
-.index .avatar{float: left;border-radius: 0px;height: 195px;width: 325px;max-width: 325px;min-width: 325px;margin: 0;object-fit: cover;}
+.index .avatar{border-radius: 0px;height: 195px;width: 325px;max-width: 325px;min-width: 325px;margin: 0;object-fit: cover;float: left;}
 .home-template .blog-cover .btn.btn-outline { color: #fff; border: 1.5px solid #fff;  margin-top: 1.5em; font-weight: 400; }
 .blog-cover{height:50vh;min-height:425px;background-color:#111;background-size:cover;background-position:center center;z-index:1}
 .bottom-align {background-position:bottom center;}
@@ -255,7 +255,7 @@ main{padding:1.5em;font-size:16px}
 .page-template main, .post-template main{padding:0;font-size:16px}
 .index-cover+article{padding-top:1.5em;}
 article+article{padding:0px}
-article.grid { padding: 0px; display: flex;}
+article.grid {padding: 0px;display: flex;flex-basis: 33.33%;}
 main.container>header,main.container>article,main.container>footer{margin:0 7.5em;padding: 0em 3.5em 2.5em;background: #fff;}
 main.container>aside{margin:0 7.5em;padding: 0 3.5em 2.5em;}
 main.container>header { padding-bottom: 0; margin-bottom: 0px; }
@@ -324,7 +324,7 @@ main .full.zoomable img.zoom{-webkit-transform:scale(1.2);transition:0.4s all ea
 article.grid .title { font-size: 1.4em; }
 article.grid .index > div {max-height: 270px;height: 270px;position: relative;}
 article.grid p {font-size: 15px;}
-article.grid .index .avatar {height: 195px;max-width: 331px;min-width: 331px;}
+article.grid .index .avatar {height: 195px;float: none;display: inline-flex;width: 100%;max-width: none;min-width: 0px;}
 main .index > span {background-color: #004225; transition: transform 0.5s;overflow: hidden;min-width: 325px;display: block;}
 @media (hover) {
 	main .index:hover {box-shadow: 0 0 2px rgba(0,0,0,.5);}
@@ -332,7 +332,7 @@ main .index > span {background-color: #004225; transition: transform 0.5s;overfl
 	main .index:hover > span img {transform: scale(1.05);transition: transform 0.5s;filter: opacity(0.75);background-color: #004225;overflow: hidden;}
 }
 article.grid .index > span {display: inline;min-width: 0px;}
-article.grid .index {flex-direction: column;max-width: 331px;float: left;margin: 0 0.9em 3em;}
+article.grid .index {flex-direction: column;margin: 0 1% 3em;}
 article.grid .index:nth-of-type(4) {display: none !important;}
 .demand-creation article.grid.demand-creation .index:nth-of-type(1), .marketing-operations article.grid.demand-creation .index:nth-of-type(1) {display: none !important;}
 .demand-creation article.grid.demand-creation .index:nth-of-type(4), .marketing-operations article.grid.demand-creation .index:nth-of-type(4) {display: flex !important;}
@@ -351,11 +351,11 @@ article.long .index > div.author {max-height: 375px;height: 375px;position: rela
 article.long .index > div.author h2 {margin: 0.75em 0 1em 0.25em;}
 article.long .index > div.author p {margin-top: 2.5em;}
 article.long .index > div.author .social a.btn-outline {padding: 0.4em 0.8em;margin-top: 0.8em;	display: inline-block;}
-article.long .index:last-child .avatar {height: 200px;max-width: 692px;min-width: 692px;}
+article.long .index:last-child .avatar {height: 200px;}
 article.long .index:last-child .avatar.custom-bottom {object-position: bottom;}
 article.long .index:last-child .avatar.custom-top {object-position: top;}	
-article.long .index:last-child {flex-direction: column;max-width: 692px; float: left;margin: 0 0.9em 3em;}
-article.long .index:first-child {float: right;}
+article.long .index:last-child {flex-direction: column;width: 64.66%;}
+article.long .index:first-child {}
 main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-bottom: 2.5em;box-shadow: 0 0 2px rgba(0,0,0,.1);}	
 .post-navigation .meta-nav {display: inline-block;width: 90%;overflow: hidden;transition: padding .3s ease-in-out, color .3s ease-in-out;}
 .post-navigation a:hover,.post-navigation a:focus {color:#000;} 
@@ -386,10 +386,8 @@ main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-b
 	main.container > footer { margin-top: 0.9em; margin-bottom: 0.9em;}	
 	article.long .index:last-child .avatar, article.grid .index .avatar { max-width: 310px; min-width: 310px; width: 310px }
 	article.long .index:last-of-type .avatar { height: 175px; }
-	article.grid .index { margin-left:0.5em; margin-right:0.5em; width:310px; }
-	article.long .index:first-child { margin-right:0.33em; }
-	article.long .index:last-child { margin-left:0.33em; margin-right:0.5em;  width:637px; }
-	article.long .index:last-child .avatar { max-width: 637px; min-width: 637px; width: 637px }
+	article.grid .index {margin-left: 1%;margin-right: 1%;}
+	article.long .index:last-child .avatar {max-width: 100%;min-width: 100%;}
 	article.grid .index > div {max-height: 300px; height: 300px; position: relative; }
 	article.long .index:first-child > div { max-height: 200px; height: 200px; position: relative; padding: 1em 2em 1.5em; }
 }
@@ -406,7 +404,7 @@ main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-b
 	main.container .pagination {padding: 1em 0em;}
 	main.container > header, main.container > section, main.container > article, main.container > aside, main.container > footer { margin: 0 4em; }
 	main.container > footer { margin-top: 0.9em; margin-bottom: 0.9em;}	
-	article.long .index:last-child, article.long .index:first-child, article.grid .index { max-width: 47%; margin-left:0.9em; margin-right:0.9em;  width: 47% }
+	article.long .index:last-child, article.long .index:first-child, article.grid .index {margin-left: 0.75%;margin-right: 0.75%;width: 48.5%;}
 	article.long .index:last-child .avatar, article.grid .index .avatar { max-width: 100%; min-width: 100%; }
 	article.long .index:last-child .avatar { height: 175px; }
 	article.grid .index:nth-of-type(3), article.long .index:last-of-type .meta  { display: none }
