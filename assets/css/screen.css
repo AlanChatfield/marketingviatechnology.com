@@ -355,7 +355,7 @@ article.long .index:last-child .avatar {height: 200px;max-width: 692px;min-width
 article.long .index:last-child .avatar.custom-bottom {object-position: bottom;}
 article.long .index:last-child .avatar.custom-top {object-position: top;}	
 article.long .index:last-child {flex-direction: column;max-width: 692px; float: left;margin: 0 0.9em 3em;}
-article.long .index:first-child {float: right;margin-right: 0.33em;}
+article.long .index:first-child {float: right;}
 main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-bottom: 2.5em;box-shadow: 0 0 2px rgba(0,0,0,.1);}	
 .post-navigation .meta-nav {display: inline-block;width: 90%;overflow: hidden;transition: padding .3s ease-in-out, color .3s ease-in-out;}
 .post-navigation a:hover,.post-navigation a:focus {color:#000;} 
@@ -387,7 +387,7 @@ main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-b
 	article.long .index:last-child .avatar, article.grid .index .avatar { max-width: 310px; min-width: 310px; width: 310px }
 	article.long .index:last-of-type .avatar { height: 175px; }
 	article.grid .index { margin-left:0.5em; margin-right:0.5em; width:310px; }
-	article.grid .index { margin-left:0.5em; margin-right:0.5em; width:310px; }
+	article.grid .index:first-child { margin-right:0.33em; }
 	article.long .index:last-child { margin-left:0.33em; margin-right:0.5em;  width:637px; }
 	article.long .index:last-child .avatar { max-width: 637px; min-width: 637px; width: 637px }
 	article.grid .index > div {max-height: 300px; height: 300px; position: relative; }
