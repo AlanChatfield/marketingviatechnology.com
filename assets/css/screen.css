@@ -427,7 +427,7 @@ main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-b
 	main{padding:0px}
 	.page-template main, .post-template main {padding:0;}
 	body {padding-top:60px;}
-	main.container>.index{padding: 0px;margin:0.5em 0.5em 1em 0.5em;}
+	main.container>.index{padding: 0px;margin:0.5em 0.5em 1em 0.5em;width:auto;}
 	main.container>header,main.container>article,main.container>footer,main.container>aside{padding: 1em 1.5em;margin:0.5em;}
 	main .full,main pre{margin:1em 0}
 	main address { max-height: none}
