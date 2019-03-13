@@ -446,8 +446,8 @@ main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-b
 	.blog-cover img{height:125px;width:auto}
 	.post-template .blog-cover section, .author-template .blog-cover section{display:none}
 	.blog-cover section a{display: none}
-	.blog-cover h1{font-size:1.5em; color: #333}
-	.blog-cover h3{font-size:1em; color: #333}
+	.blog-cover h1, .blog-cover.index-cover h1 {font-size:1.5em; color: #333}
+	.blog-cover h3, .blog-cover.index-cover h1 {font-size:1em; color: #333}
 	.page-template .blog-cover h1, .page-template .blog-cover h3{ color: #fff;}
 	.home-template .blog-cover {height:300px; min-height:0px}	
 	.index-cover h1 { font-size: 1.8em;line-height: 1.2em;margin: 0 0.6em 0.3em;font-weight: 700;}
