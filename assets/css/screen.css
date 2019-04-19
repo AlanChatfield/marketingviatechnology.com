@@ -180,7 +180,6 @@ a:hover{color:#00578A;text-decoration:none}
 .custom-bottom-align {object-position:bottom;}
 .top-align {background-position:top center;}
 .custom-top-align {object-position:top;}
-.tag-asides .blog-cover, .tag-politics .blog-cover { background-position: top 20% center; }
 .blog-cover.index-cover { height:325px;min-height:325px; } 
 .blog-cover section{text-align:center;background-color:rgba(0,0,0,0.4);background:radial-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.25));height:100%;display:flex;align-items:center;}
 .blog-cover.author-cover { min-height:500px; }
