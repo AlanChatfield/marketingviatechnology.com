@@ -85,7 +85,7 @@
 		<p>Random asides and other off-topic thoughts about sport, politics and global affairs</p>
 	</article>		
 	<article class="container grid noimg opinion">			
-		{{#get "posts" filter="tag:politics,tag:sport,[tag:asides+featured:-true]" include="tags" limit="3" as |posts|}}
+		{{#get "posts" filter="tag:politics,tag:sport,tag:asides" include="tags" limit="3" as |posts|}}
 			{{> loop }}	
 		{{/get}}	
 	</article>
