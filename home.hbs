@@ -28,7 +28,7 @@
 			</section>
 			{{/author}}	
 		{{/get}}	
-		{{#get "posts" filter="tag:-[politics,sport]" include="tags" limit="1" as |posts|}}	
+		{{#get "posts" filter="tag:-[politics,sport,asides],featured:true" include="tags" limit="1" as |posts|}}	
 			{{#foreach posts}}	
 				{{> teaser }}		
 	</article>
