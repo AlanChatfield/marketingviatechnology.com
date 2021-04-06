@@ -9,7 +9,11 @@
     <meta name="google-site-verification" content="vAGv3vdnOT1juQ3bHig3kqSuCGa7lap9LBRtWRL4wNg" />
     <meta name="msvalidate.01" content="2D884678AA9CA1B66D492BD36668348F" />
     {{! Page Meta }}
-    <title>{{meta_title}} - Alan Chatfield - Marketing via Technology</title>
+    {{#is "post, page, tag" }}
+    	<title>{{meta_title}} - Alan Chatfield - Marketing via Technology</title>
+    {{else}}
+    	<title>Alan Chatfield - Marketing via Technology</title>    
+    {{/is}}
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,7 +31,39 @@
 </head>
 <body class="{{body_class}}">
 
-	{{> menu }}
+
+    {{#is "post" }}
+		{{#post}}
+			{{#has tag="politics,sport"}}
+				{{> menu-opinion }}
+			{{else}}
+				{{> menu }}
+			{{/has}}
+		{{/post}}			
+    {{else is "page"}}
+		{{#page}}
+			{{#has slug="opinion"}}
+				{{> menu-opinion }}
+			{{else}}
+				{{> menu }}
+			{{/has}}
+		{{/page}}
+    {{else is "tag"}}
+		{{#tag}}
+			{{#has slug="politics"}}
+				{{> menu-opinion }}
+			{{else}}				
+				{{#has slug="sport"}}
+					{{> menu-opinion }}	
+				{{else}}				
+					{{> menu }}
+				{{/has}}
+			{{/has}}
+		{{/tag}}		
+    {{else}}	
+    	{{> menu }}   
+    {{/is}}
+	
     
     {{! Everything else gets inserted here }}
     {{{body}}}
@@ -41,7 +77,7 @@
 				{{> social }}
             </nav>
 			<nav class="copyright col-3">
-				&copy; <script>document.write(new Date().getFullYear())</script><noscript>2018</noscript> Alan Chatfield.
+				&copy; {{date format="YYYY"}} Alan Chatfield.
 			</nav> 			
         </div>
     </footer>

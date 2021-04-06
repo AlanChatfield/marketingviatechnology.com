@@ -1,10 +1,10 @@
 {
-  "name": "incorporated",
-  "description": "A Ghost theme which provides great typography, responsive design, author details, semantic markup and more. At this time it is for the most part a port by James Ramsay of Jekyll Incorporated by Kippt, Inc.",
-  "version": "2.2.0",
+  "name": "alanchatfield-net",
+  "description": "A Ghost theme which provides great typography, responsive design, author details, semantic markup and more. Very loosely based on the Incorporated theme by James Ramsay, which is itself for the most part a port of Jekyll Incorporated by Kippt, Inc.",
+  "version": "3.2.1",
   "engines": {
-        "ghost": ">=2.0.0",
-        "ghost-api": "v2"
+        "ghost": ">=3.0.0",
+        "ghost-api": "v3"
   },
   "license": "MIT",
   "scripts": {
@@ -28,6 +28,23 @@
     "theme"
   ],
   "config": {
-    "posts_per_page": 10
+    "posts_per_page": 10,
+	"image_sizes": {
+        "xs": {
+            "width": 340
+        },
+        "s": {
+            "width": 475
+        },
+        "m": {
+            "width": 750
+        },
+        "l": {
+            "width": 1200
+        },
+        "xl": {
+            "width": 2000
+        }
+	}
   }
 }

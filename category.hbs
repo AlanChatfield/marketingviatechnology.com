@@ -1,18 +1,30 @@
-{{!< defaultlist}}
+{{!< default}}
 {{#page}}
-<div class="blog-cover index-cover" {{#if feature_image}}style="background-image: url({{feature_image}})"{{else}}{{#if @site.cover_image}}style="background-image: url('/content/images/2018/11/mountain-road-1556177_rgb-1.jpg'})"{{/if}}{{/if}}>
-	<section style="background-color: rgba(0, 0, 0, 0.5)">	
+{{#if feature_image}}
+<style>
+	.blog-cover { background-image: url({{img_url feature_image size='xl'}}) }
+	@media (max-width: 1023px){ .blog-cover { background-image: url({{img_url feature_image size='l'}})} }
+	@media (max-width: 767px){ .blog-cover { background-image: url({{img_url feature_image size='m'}})} }
+	@media (max-width: 480px){ .blog-cover { background-image: url({{img_url feature_image size='s'}})} }
+</style>
+{{else}}{{#if @site.cover_image}}	
+<style>
+	.blog-cover { background-image: url({{@site.cover_image}}) }
+</style>
+{{/if}}{{/if}}
+<header class="blog-cover index-cover {{#if feature_image}}"{{else}}no-cover"{{/if}}>
+	<section>	
 		<div class="container">
 			<h1>{{{title}}}</h1>
 			<h3>{{{excerpt}}}</h3>
 		</div>				
 	</section>			
-</div>
+</header>
 {{/page}}
 
 {{! The main content area on the homepage }}
-<article class="container">
+<main class="container">
     {{> loop }}
 	
     {{pagination }}	
-</article>
+</main>

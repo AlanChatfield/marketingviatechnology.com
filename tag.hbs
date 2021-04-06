@@ -5,7 +5,15 @@
 
 {{! The big featured header on the homepage, with the site logo and description }}
 {{#tag}}
-<div class="blog-cover index-cover" {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
+{{#if feature_image}}
+<style>
+	.blog-cover { background-image: url({{img_url feature_image size='xl'}}) }
+	@media (max-width: 1023px){ .blog-cover { background-image: url({{img_url feature_image size='l'}})} }
+	@media (max-width: 767px){ .blog-cover { background-image: url({{img_url feature_image size='m'}})} }
+	@media (max-width: 480px){ .blog-cover { background-image: url({{img_url feature_image size='s'}})} }
+</style>
+{{/if}}
+<header class="blog-cover index-cover {{#if feature_image}}"{{else}}no-cover"{{/if}}>
     <section>
         <div class="container">
             <h1>{{name}}</h1>
@@ -17,15 +25,15 @@
             {{> header }}
         </div>
     </section>
-</div>
+</header>
 {{/tag}}
 
 {{! The main content area on the homepage }}
-<article class="container">
+<main class="container">
     {{> loop }}
 	
     {{pagination}}
-</article>
+</main>
 
 
 

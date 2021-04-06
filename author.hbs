@@ -5,7 +5,19 @@
 
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-<div class="blog-cover author-cover" {{#if cover_image}}style="background-image: url({{cover_image}})"{{else}}{{#if @site.cover_image}}style="background-image: url({{@site.cover_image}})"{{/if}}{{/if}}>
+{{#if cover_image}}
+<style>
+	.blog-cover { background-image: url({{img_url cover_image size='xl'}}) }
+	@media (max-width: 1023px){ .blog-cover { background-image: url({{img_url cover_image size='l'}})} }
+	@media (max-width: 767px){ .blog-cover { background-image: url({{img_url cover_image size='m'}})} }
+	@media (max-width: 480px){ .blog-cover { background-image: url({{img_url cover_image size='s'}})} }
+</style>
+{{else}}{{#if @site.cover_image}}	
+<style>
+	.blog-cover { background-image: url({{@site.cover_image}}) }
+</style>
+{{/if}}{{/if}}
+<header class="blog-cover author-cover">
         <section>
             <div class="container">
                 {{#if profile_image}}<img src="{{profile_image}}">{{/if}}
@@ -17,19 +29,19 @@
 				</nav>				
             </div>
         </section>
-</div>
+</header>
 {{/author}}		
 
 
 
 {{! This is the post loop - each post will be output using this markup }}
-<article class="container">
+<main class="container">
 {{#author}}
         <section class="index xs-show">
             <div class="bio">
                 {{#if profile_image}}<img src="{{profile_image}}">{{/if}}
                 <h1>{{name}}</h1>
-                <p><span class="muted">{{bio}}</span></p>
+                <p><span class="muted">{{{bio}}}</span></p>
 				<nav class="social">
 					<a class="icon-tw" href='{{twitter_url}}' target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a>
 					<a class="icon-li" href='{{website}}' target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>	
@@ -41,4 +53,4 @@
     {{> loop }}
 	
     {{pagination}}
-</article>
+</main>
