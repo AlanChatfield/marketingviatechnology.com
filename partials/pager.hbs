@@ -1,6 +1,8 @@
+{{^has tag="politics,sport"}}
 	<footer class="navigation post-navigation" role="navigation">
 		<div class="nav-links">
-			{{#prev_post}}
+		{{#get "posts" filter="tag:-[politics,sport]+id:<{{id}}" limit="1" include="tags" order="id desc"}}
+			{{#foreach posts}}
 			<div class="nav-previous">
 				<a href="{{url}}" rel="prev">
 					<div class="the-navigation-arrow"><i class="fa prev-next fa-lg fa-angle-left"></i></div> 
@@ -9,8 +11,10 @@
 					</div>
 				</a>
 			</div>
-			{{/prev_post}}
-			{{#next_post}}
+			  {{/foreach}}
+			{{/get}}
+			{{#get "posts" filter="tag:-[politics,sport]+id:>{{id}}" limit="1" include="tags" order="id asc"}}
+				{{#foreach posts}}
 			<div class="nav-next">
 				<a href="{{url}}" rel="next">
 					<div class="meta-nav"><span class="small-part">Next Post</span>
@@ -19,6 +23,38 @@
 					<div class="the-navigation-arrow"><i class="fa prev-next fa-lg fa-angle-right"></i></div>
 				</a>
 			</div>
-			{{/next_post}}
+			  {{/foreach}}
+			{{/get}}
 		</div>
 	</footer>
+{{/has}}
+{{#has tag="politics,sport"}}
+	<footer class="navigation post-navigation" role="navigation">
+		<div class="nav-links">
+		{{#get "posts" filter="tag:[politics,sport]+id:<{{id}}" limit="1" include="tags" order="id desc"}}
+			{{#foreach posts}}
+			<div class="nav-previous">
+				<a href="{{url}}" rel="prev">
+					<div class="the-navigation-arrow"><i class="fa prev-next fa-lg fa-angle-left"></i></div> 
+					<div class="meta-nav"><span class="small-part">Previous Post</span>
+						<div class="next-prev-name">{{title}}</div>
+					</div>
+				</a>
+			</div>
+			  {{/foreach}}
+			{{/get}}
+			{{#get "posts" filter="tag:[politics,sport]+id:>{{id}}" limit="1" include="tags" order="id asc"}}
+				{{#foreach posts}}
+			<div class="nav-next">
+				<a href="{{url}}" rel="next">
+					<div class="meta-nav"><span class="small-part">Next Post</span>
+						<div class="next-prev-name">{{title}}</div>
+					</div>
+					<div class="the-navigation-arrow"><i class="fa prev-next fa-lg fa-angle-right"></i></div>
+				</a>
+			</div>
+			  {{/foreach}}
+			{{/get}}
+		</div>
+	</footer>
+{{/has}}		

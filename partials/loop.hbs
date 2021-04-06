@@ -1,18 +1,20 @@
 {{#foreach posts}}	
 		{{#if feature_image}}
-		<section class="index img"> 
-			<a href="{{{url}}}" rel="prefetch"><img src="{{{feature_image}}}" class="avatar {{{custom_template}}}"></img></a>
+		<a class="index img" href="{{{url}}}"><span><img 
+			srcset="{{img_url feature_image size='xs'}} 340w, {{img_url feature_image size='s'}} 475w, {{img_url feature_image size='m'}} 750w"
+			sizes="(max-width: 767px) 100vw, (max-width: 1023px) 250px, 340px"
+			src="{{img_url feature_image size='xs'}}" 
+			class="avatar {{{custom_template}}}"></img></span>		
 			<!-- post_class: {{post_class}} -->
 		{{else}}
-			<section class="index">
+			<a class="index" href="{{{url}}}">
 		{{/if}}	
 			<div>
-				<a href="{{{url}}}" rel="prefetch"><h2 class="title">{{{title}}}</h2>
-					<p>{{{excerpt}}}</p>
-					<div class="meta">
-						<time pubdate datetime="{{date format='YYYY-MM-DD'}}" title="{{date format="DD MMM YYYY"}}">{{date format="DD MMM YYYY"}}</time> {{#if tags}} | {{primary_tag.name}}{{/if}}
-					</div>
-				</a>
+				<h2 class="title">{{{title}}}</h2>
+				<p>{{{excerpt}}}</p>
+				<div class="meta">
+					<time pubdate datetime="{{date format='YYYY-MM-DD'}}" title="{{date format="DD MMM YYYY"}}">{{date format="DD MMM YYYY"}}</time> {{#if tags}} | {{primary_tag.name}}{{/if}}
+				</div>
 			</div>
-		</section>
+		</a>
 {{/foreach}}
