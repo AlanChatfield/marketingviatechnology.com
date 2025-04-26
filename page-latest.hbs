@@ -1,0 +1,89 @@
+{{!< default}}
+	{{#page}}
+{{#if feature_image}}
+<style>
+	.blog-cover { background-image: url({{img_url feature_image size='xl'}}) }
+	@media (max-width: 1023px){ .blog-cover { background-image: url({{img_url feature_image size='l'}})} }
+	@media (max-width: 767px){ .blog-cover { background-image: url({{img_url feature_image size='m'}})} }
+	@media (max-width: 480px){ .blog-cover { background-image: url({{img_url feature_image size='s'}})} }
+</style>
+{{else}}{{#if @site.cover_image}}	
+<style>
+	.blog-cover { background-image: url({{@site.cover_image}}) }
+</style>
+{{/if}}{{/if}}
+
+<header class="blog-cover">
+    <section>
+        <div class="container">
+            <h1>{{{title}}}</h1>
+            <h3>{{{excerpt}}}</h3>
+            {{^if @member}}<a href="#/portal/signup" class="btn btn-outline">Subscribe Now</a>{{/if}}
+        </div>
+    </section>
+</header>
+
+	{{/page}}
+		{{#get "posts" filter="tag:hash-member" include="tags,authors" limit="1" as |posts|}}	
+			{{#foreach posts}}		
+
+
+	
+	<main class="container">
+
+	<article>		
+
+			
+		{{#if feature_image}}
+		<style>
+			.blog-cover { background-image: url({{img_url feature_image size='xl'}}) }
+			@media (max-width: 1023px){ .blog-cover { background-image: url({{img_url feature_image size='l'}})} }
+			@media (max-width: 767px){ .blog-cover { background-image: url({{img_url feature_image size='m'}})} }
+			@media (max-width: 480px){ .blog-cover { background-image: url({{img_url feature_image size='s'}})} }
+			.home-template .blog-cover { background-position: center center; }
+		</style>
+		{{/if}}			
+			
+        <header>
+         <h2 class="title">{{{title}}}</h2>	
+            <div class="meta">
+                <time pubdate datetime="{{date format="YYYY-MM-DD"}}" title="{{date format='DD MMMM YYYY'}}">{{date format='DD MMMM YYYY'}}</time> {{#if tags}}| {{primary_tag.name}}{{/if}}
+            </div>
+            <h3>{{{excerpt}}}</h3>			
+        </header>
+	
+        {{content}}	
+		
+		{{#if feature_image_caption}}
+			<div class="meta credit">Banner {{feature_image_caption}}</div>
+		{{/if}}
+
+		<footer>
+			<p class="author">
+				{{#if primary_author.profile_image}}<a rel="author" href="/author/{{primary_author.slug}}" title="{{primary_author.name}}"><img src="{{primary_author.profile_image}}"></a>{{/if}}
+				Written by <strong><a rel="author" href="/author/{{primary_author.slug}}" title="{{primary_author.name}}">{{primary_author.name}}</a></strong><br>
+				<span class="muted">{{{primary_author.bio}}}</span>
+			</p>
+		</footer>
+		
+	</article>
+			{{/foreach}}	
+		{{/get}}
+	{{^if @member}}	
+	{{#page}}
+	<footer class="blue">
+	   <header>			
+	   </header>    
+	   {{content}}          
+	</footer>
+	{{/page}}
+	{{/if}}	
+
+	<article class="container info teaser-title">				
+		<nav class="pagination" role="navigation">
+			<a class="older-posts" href="/news">Older Posts <span aria-hidden="true">→</span></a>
+		</nav>				
+	</article>			
+	
+</main>	
+

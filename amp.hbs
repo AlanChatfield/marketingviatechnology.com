@@ -575,13 +575,9 @@ main.container>footer.post-navigation {border: none;padding-top: 2.5em;padding-b
 </head>
 
 <body class="amp-template {{body_class}}">
+	{{> menu-amp }}
+	
     {{#post}}
-	{{#has tag="politics,sport"}}
-		{{> menu-opinion-amp }}
-	{{else}}
-		{{> menu-amp }}
-	{{/has}}
-
 	<header class="blog-cover">
 		<section>
 			<div class="container">

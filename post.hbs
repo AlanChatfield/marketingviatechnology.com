@@ -17,18 +17,11 @@
 	.blog-cover { background-image: url({{@site.cover_image}}) }
 </style>
 {{/if}}{{/if}}
-<header class="blog-cover {{{custom_template}}}">
+<header class="blog-cover {{@custom.banner_alignment}} {{@custom.banner_alignment}}">
     <section>
         <div class="container">
             <h1 class="title">{{{title}}}</h1>
-            <h3>{{{excerpt}}}</h3>
-            <div class="social">
-                <a class="icon-tw" href='http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}' target="_blank"><i class="fab fa-twitter fa-sm"></i></a>
-                <a class="icon-li" href='https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}' target="_blank"><i class="fab fa-linkedin-in fa-sm"></i></a>			
-                <a class="icon-fb" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank"><i class="fab fa-facebook-f fa-sm"></i></a>				
-            </div>			
-        </div>
-    </section>			
+    </section>          
 </header>
 
 {{! Everything below outputs content of the the post which has been published }}
@@ -37,12 +30,24 @@
         <header>
             <h2 class="title xs-show">{{{title}}}</h2>		
             <div class="meta">
-                <time pubdate datetime="{{date format="YYYY-MM-DD"}}" title="{{date format='DD MMMM YYYY'}}">{{date format='DD MMMM YYYY'}}</time> {{#if tags}}| {{tags}}{{/if}}
-            </div>			
-        </header>
+                <time pubdate datetime="{{date format="YYYY-MM-DD"}}" title="{{date format='DD MMMM YYYY'}}">{{date format='MMMM YYYY'}}</time> {{#if tags}}| <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>{{/if}}
+            </div>
+            <h3>{{{excerpt}}}</h3>      
+        </header>   
 	
         {{content}}				
 
+        {{#has tag="#chatpress"}}
+        <div class="meta credit">
+        Written by Alan Chatfield<br>
+        {{#if feature_image_caption}}
+            Banner {{feature_image_caption}}
+        {{/if}}      
+        </div>
+        {{else}}
+        {{#if feature_image_caption}}
+            <div class="meta credit">Banner {{feature_image_caption}}<br> </div>
+        {{/if}}
         <footer>
             <p class="author">
                 {{#if primary_author.profile_image}}<a rel="author" href="/author/{{primary_author.slug}}" title="{{primary_author.name}}"><img src="{{primary_author.profile_image}}"></a>{{/if}}
@@ -50,10 +55,25 @@
                 <span class="muted">{{{primary_author.bio}}}</span>
             </p>
         </footer>
-
+        {{/has}}
     </article>
-		
-	{{> pager }}
-                         
+
+    {{^has tag="#chatpress"}}
+    {{^if @member}}
+    {{> subscribe-footer }}
+    {{/if}}
+    {{/has}}
+
+    {{#has tag="#member"}}
+        {{> pager}}
+        <footer class="comments">
+            {{comments title="Subscriber discussion" }}
+        </footer>
+    {{else has tag="#chatpress"}}
+        {{> pager-chatpress }} 
+    {{else}}	
+	    {{> pager-public }}
+    {{/has}}
+	
 </main>
 {{/post}}

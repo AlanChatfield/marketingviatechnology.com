@@ -1,0 +1,30 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! TODO: Add support for per article cover image }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+
+<header class="blog-cover" style="background-image: url(https://marketingviatechnology.com/content/images/2021/05/tim-foster-yuNWHajF8Po-unsplash.jpg);">
+    <section>
+        <div class="container">
+        	{{#if member}}<h1>Successfully Unsubscribed</h1><h3>You will no longer receive emails</h3>{{/if}}
+			{{#if error}}<h1>Unsubscribe Failed</h1>{{/if}}
+        </div>
+    </section>
+</header>
+
+{{! Everything below outputs content of the the post which has been published }}
+<main class="container">
+    <article>
+		{{#if error}}
+			<h3 style="margin-bottom: 1.2em;">Error</h3>
+			<p>{{error}}</p>
+		{{else}}
+			{{#if member}}<h3 style="margin-bottom: 1.2em;">We're sorry to see you go</h3><p><span class="gh-flow-em">{{member.email}}</span> has been successfully unsubscribed</p>{{/if}}
+		{{/if}}
+        <p><a class="error-link" href="https://marketingviatechnology.com/">Go to the front page →</a></p>          
+    </article>
+</main>

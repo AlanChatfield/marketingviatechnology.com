@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     {{! Document Settings }}
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
@@ -9,60 +9,61 @@
     <meta name="google-site-verification" content="vAGv3vdnOT1juQ3bHig3kqSuCGa7lap9LBRtWRL4wNg" />
     <meta name="msvalidate.01" content="2D884678AA9CA1B66D492BD36668348F" />
     {{! Page Meta }}
-    {{#is "post, page, tag" }}
-    	<title>{{meta_title}} - Alan Chatfield - Marketing via Technology</title>
+    {{#is "home" }}
+    <title>{{meta_title}}</title>
+    <link href="https://mastodon.social/@alancf22" rel="me">
+    <link href="https://www.threads.net/@alancf22" rel="me">
+    {{ else is "post, page, tag" }}
+    	<title>{{meta_title}} - {{@site.title}}</title>
     {{else}}
-    	<title>Alan Chatfield - Marketing via Technology</title>    
+    	<title>{{@site.title}}</title>    
     {{/is}}
-
+    	
+	<link rel="icon" type="image/png" sizes="32x32" href="{{asset "images/favicon-32x32.png"}}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{asset "images/favicon-16x16.png"}}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{asset "images/apple-touch-icon.png"}}">	
+	<link rel="manifest" href="/manifest.json">
+	<meta name="theme-color" content="#109954">	
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#004225" />
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,600" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css" integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B" crossorigin="anonymous">    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/brands.css" integrity="sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css" integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous">    
 
-    {{! Ghost outputs important style and meta data with this tag }}
-    {{ghost_head}}
+ {{#post}}   
+    <meta name="fediverse:creator" content="{{@custom.fediverse}}" />
+    <meta name="author" content="{{primary_author.name}}" />  
+  {{#has tag="politics, sport, #chatpress"}}
+    <meta name="robots" content="noindex, follow">
+  {{/has}}
+ {{#is "post"}}    
+  {{#has tag="#member"}}
+    {{ghost_head exclude="cta_styles"}}  
+  {{else}}
+    {{ghost_head exclude="portal,comment_counts,card_assets,cta_styles"}}         
+  {{/has}}
+ {{/is}} 
+{{/post}}
+{{#page}}  
+  {{#has tag="#noindex"}}
+    <meta name="robots" content="noindex, follow">
+  {{/has}}
+ {{#is "page"}}    
+  {{#has tag="#member"}}
+    {{ghost_head exclude="comment_counts,cta_styles"}}  
+  {{else}}
+    {{ghost_head exclude="comment_counts,portal,card_assets,cta_styles"}}         
+  {{/has}} 
+ {{/is}}
+{{/page}}  
+ {{^is "page, post"}}    
+    {{ghost_head exclude="comment_counts,portal,card_assets,cta_styles"}}
+ {{/is}}
 </head>
 <body class="{{body_class}}">
 
 
-    {{#is "post" }}
-		{{#post}}
-			{{#has tag="politics,sport"}}
-				{{> menu-opinion }}
-			{{else}}
-				{{> menu }}
-			{{/has}}
-		{{/post}}			
-    {{else is "page"}}
-		{{#page}}
-			{{#has slug="opinion"}}
-				{{> menu-opinion }}
-			{{else}}
-				{{> menu }}
-			{{/has}}
-		{{/page}}
-    {{else is "tag"}}
-		{{#tag}}
-			{{#has slug="politics"}}
-				{{> menu-opinion }}
-			{{else}}				
-				{{#has slug="sport"}}
-					{{> menu-opinion }}	
-				{{else}}				
-					{{> menu }}
-				{{/has}}
-			{{/has}}
-		{{/tag}}		
-    {{else}}	
-    	{{> menu }}   
-    {{/is}}
+    {{> menu }}   
 	
     
     {{! Everything else gets inserted here }}

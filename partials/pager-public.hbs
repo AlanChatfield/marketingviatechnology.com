@@ -1,6 +1,6 @@
 	<footer class="navigation post-navigation" role="navigation">
 		<div class="nav-links">
-		{{#get "posts" filter="tags:[hash-member]+id:<{{id}}" limit="1" include="tags" order="published_at desc"}}
+		{{#get "posts" filter="tags:-[hash-member,hash-chatpress,sport,news]+id:<{{id}}" limit="1" include="tags" order="published_at desc"}}
 			{{#foreach posts}}
 			<div class="nav-previous">
 				<a href="{{url}}" rel="prev">
@@ -18,7 +18,7 @@
 			</div>
 			  {{/foreach}}
 			{{/get}}
-			{{#get "posts" filter="tags:[hash-member]+id:>{{id}}" limit="1" include="tags" order="published_at asc"}}
+			{{#get "posts" filter="tags:-[hash-member,hash-chatpress,sport,news]+id:>{{id}}" limit="1" include="tags" order="published_at asc"}}
 				{{#foreach posts}}
 			<div class="nav-next">
 				<a href="{{url}}" rel="next">

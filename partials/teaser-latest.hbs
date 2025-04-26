@@ -1,8 +1,7 @@
-		<section class="index img">
 		{{#if feature_image}}
-		<a href="{{{url}}}"><span><img 
+		<a class="index img" href="/latest"><span><img 
 			srcset="{{img_url feature_image size='xs'}} 340w, {{img_url feature_image size='s'}} 475w, {{img_url feature_image size='m'}} 750w"
-			sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 340px"
+			sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 700px"
 			src="{{img_url feature_image size='xs'}}" 
 			class="avatar {{{custom_template}}}" alt=""></img></span>
 			<!-- post_class: {{post_class}} -->
@@ -13,8 +12,7 @@
 				<h2 class="title">{{{title}}}</h2>
 				<p>{{{excerpt}}}</p>
 				<div class="meta">
-					<time pubdate datetime="{{date format='YYYY-MM-DD'}}" title="{{date format="DD MMM YYYY"}}">{{date format="MMM YYYY"}}</time> {{#if tags}} | {{primary_tag.name}}{{/if}}
+					<time pubdate datetime="{{date format='YYYY-MM-DD'}}" title="{{date format="DD MMM YYYY"}}">{{date format="DD MMM YYYY"}}</time> {{#if tags}} | {{primary_tag.name}}{{/if}}
 				</div>
 			</div>
 		</a>
-		</section>

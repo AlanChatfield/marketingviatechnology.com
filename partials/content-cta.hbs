@@ -1,0 +1,22 @@
+{{{html}}}
+<!--hr>
+<aside class="gh-post-upgrade-cta">
+    <div>
+        {{#has visibility="paid"}}
+            <h2>The rest of this post is for paying subscribers only</h2>
+        {{/has}}
+        {{#has visibility="members"}}
+            <h2>The rest of this post is for newsletter subscribers only</h2>
+        {{/has}}
+        {{#has visibility="tiers"}}
+            <h2>The rest of this post is for subscribers on the {{tiers}} only </h2>
+        {{/has}}
+        {{#if @member}}
+            <a class="btn" data-portal="account/plans">Upgrade your account</a>
+        {{else}}
+            <a class="btn" data-portal="signup">Subscribe now</a>
+            <p><small>Already a subscriber? <a data-portal="signin">Sign in</a></small></p>
+        {{/if}}
+    </div>
+</aside>
+<hr-->

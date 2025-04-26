@@ -1,0 +1,101 @@
+{{!< default}}
+	{{#page}}
+{{#if feature_image}}
+<style>
+	.blog-cover { background-image: url({{img_url feature_image size='xl'}}); }
+	@media (max-width: 1023px){ .blog-cover { background-image: url({{img_url feature_image size='l'}})} }
+	@media (max-width: 767px){ .home-template .blog-cover.index-cover { background-image: url({{img_url feature_image size='m'}}) !important;} }
+	@media (max-width: 480px){ .home-template .blog-cover.index-cover { background-image: url({{img_url feature_image size='s'}}) !important;} }
+</style>
+{{else}}{{#if @site.cover_image}}	
+<style>
+	.blog-cover { background-image: url({{@site.cover_image}}) }
+</style>
+{{/if}}{{/if}}
+<header class="blog-cover">
+    <section>
+        <div class="container">
+            <h1>{{{title}}}</h1>
+            <h3>{{{excerpt}}}</h3>
+			{{^if @member}}<a href="#/portal/signup" class="btn btn-outline">Subscribe Now</a>{{/if}}
+        </div>
+    </section>
+</header>
+	{{/page}}
+<style>
+	 main.container article.grid { padding: 0px; justify-content: center; background: none;box-shadow: none;}
+	 article.grid.short .index .meta {display: none;}
+	 main.container article.grid.short { margin-left: 7em;margin-right: 7em; }
+	 main.container article.long .index:last-child { width: 100%; margin: 0px;}
+	 main.container article.info {padding: 20px 0px 0px; background: transparent; border: none; box-shadow: none; margin-bottom: 0px;overflow: visible;margin-top: 10px;}
+	 main.container > footer.register { background: none; box-shadow: none; }
+	 @media (max-width: 1023px) {
+		main.container article.grid.short { margin-left: 0.5em;margin-right: 0.5em; }
+	 }
+	 @media (max-width: 767px) {
+		main.container article.grid.short { margin-left: 0em;margin-right: 0em; }
+		.home-template .blog-cover.index-cover section{background-color:rgba(0,0,0,0.25) !important; background: radial-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.25)) !important;}	
+	 }
+</style>
+<main class="container demand-creation">
+		
+	{{#if @member}}		
+		{{#get "posts" filter="tag:hash-member" include="tags" limit="1" as |posts|}}	
+			{{#foreach posts}}
+		<article class="container info">
+			<nav class="pagination" role="navigation">
+				<a class="older-posts" href="{{{url}}}">See more <span aria-hidden="true">→</span></a>
+			</nav>	
+			<h2>Latest Edition</h2>
+			<p>Read the latest issue of Marketing via Technology. Published twice per month.</p>
+		</article>
+			<article class="container grid long">		
+				{{> teaser-wide }}		
+			</article>
+			{{/foreach}}	
+		{{/get}}
+		<article class="container info">
+			<nav class="pagination" role="navigation">
+				<a class="older-posts" href="/news">See more <span aria-hidden="true">→</span></a>
+			</nav>	
+			<h2>Previous Editions</h2>
+			<p>Browse the Marketing via Technology issue archive.</p>
+		</article>		
+	{{else}}
+		{{#get "posts" filter="tag:hash-member" include="tags" limit="1" as |posts|}}	
+			{{#foreach posts}}	
+		<article class="container info">
+			<nav class="pagination" role="navigation">
+				<a class="older-posts" href="{{{url}}}">See more <span aria-hidden="true">→</span></a>
+			</nav>	
+			<h2>Latest Edition</h2>
+			<p>Read the latest issue of Marketing via Technology. Published twice per month.</p>
+		</article>
+			<article class="container grid long" style="">		
+				{{> teaser-wide }}		
+			</article>
+			{{/foreach}}	
+		{{/get}}
+	{{#page}}
+	<footer class="blue">
+	   <header>			
+	   </header>    
+	   {{content}}          
+	</footer>
+	{{/page}}
+		<article class="container info">
+			<nav class="pagination" role="navigation">
+				<a class="older-posts" href="/news">See more <span aria-hidden="true">→</span></a>
+			</nav>	
+			<h2>Previous Editions</h2>
+			<p>Register today to browse the Marketing via Technology archive.</p>
+		</article>
+	{{/if}}	
+	{{#get "posts" filter="tag:hash-member" include="tags" limit="4" as |posts|}}			
+		<article class="container grid short demand-creation">			
+				{{#foreach posts}}		
+					{{> teaser }}
+				{{/foreach}}			
+		</article>	
+	{{/get}}	
+</main>

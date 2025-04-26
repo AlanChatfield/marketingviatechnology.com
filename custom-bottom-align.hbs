@@ -23,9 +23,9 @@
             <h1 class="title">{{{title}}}</h1>
             <h3>{{{excerpt}}}</h3>
             <div class="social">
-                <a class="icon-tw" href='http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}' target="_blank"><i class="fab fa-twitter fa-sm"></i></a>
-                <a class="icon-li" href='https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}' target="_blank"><i class="fab fa-linkedin-in fa-sm"></i></a>			
-                <a class="icon-fb" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank"><i class="fab fa-facebook-f fa-sm"></i></a>				
+                <a class="icon-tw" href="http://twitter.com/share?url=https://alanchatfield.net{{url}}&text={{encode title}}" target="_blank"><i class="fab fa-twitter fa-sm"></i></a>
+                <a class="icon-li" href="https://www.linkedin.com/shareArticle?mini=true&url=https://alanchatfield.net{{url}}&title={{encode title}}" target="_blank"><i class="fab fa-linkedin-in fa-sm"></i></a>			
+                <a class="icon-fb" href="http://www.facebook.com/sharer.php?u=https://alanchatfield.net{{url}}" target="_blank"><i class="fab fa-facebook-f fa-sm"></i></a>				
             </div>			
         </div>
     </section>			
@@ -35,13 +35,17 @@
 <main class="container">
     <article>
         <header>
-            <h2 class="title xs-show">{{{title}}}</h2>		
+            <h2 class="title">{{{title}}}</h2>		
             <div class="meta">
                 <time pubdate datetime="{{date format="YYYY-MM-DD"}}" title="{{date format='DD MMMM YYYY'}}">{{date format='DD MMMM YYYY'}}</time> {{#if tags}}| {{tags}}{{/if}}
             </div>			
         </header>
 	
         {{content}}				
+
+		{{#if feature_image_caption}}
+			<div class="meta credit">Banner {{feature_image_caption}}</div>
+		{{/if}}
 
         <footer>
             <p class="author">

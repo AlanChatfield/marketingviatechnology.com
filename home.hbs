@@ -1,74 +1,58 @@
 {{!< default}}
-
-	<header class="blog-cover index-cover" style="background-image: url(/assets/images/mountain-road-1556177_rgb-1.jpg);background-position:bottom 20% center">
-		<a href="/blog/">	
+	{{#page}}
+	{{#if feature_image}}
+	<style>
+		.blog-cover { background-image: url({{img_url feature_image size='xl'}}) }
+		@media (max-width: 1023px){ .blog-cover { background-image: url({{img_url feature_image size='l'}})} }
+		@media (max-width: 767px){ .blog-cover { background-image: url({{img_url feature_image size='m'}})} }
+		@media (max-width: 480px){ .blog-cover { background-image: url({{img_url feature_image size='s'}})} }
+	</style>
+	{{else}}{{#if @site.cover_image}}	
+	<style>
+		.blog-cover { background-image: url({{@site.cover_image}}) }
+	</style>
+	{{/if}}{{/if}}
+	<header class="blog-cover" style="">	
 			<section>	
 				<div class="container">
-					<h1>Marketing via Technology</h1>
-					<h3>Views from the intersection of digital marketing and enterprise technology</h3>
+					<h1>{{title}}</h1>
+					<h3>{{excerpt}}</h3>
 				</div>				
-			</section>
-		</a>			
+			</section>			
 	</header>
-	{{#get "posts" filter="tag:-[politics,sport,asides],featured:true" include="tags" limit="1" as |posts|}}	
+	{{/page}}
+	{{#get "posts" filter="tag:hash-member" include="tags" limit="1" as |posts|}}	
 		{{#foreach posts}}	
-<main class="{{primary_tag.slug}}">
+				<main class="home-template {{primary_tag.slug}}">
 		{{/foreach}}	
 	{{/get}}	
-	<article class="container grid long">	
+	<article class="container grid long" style="padding-top: 20px">	
 		{{#get "authors" limit="1" as |primaryauthor|}}	
 			{{#primaryauthor}}		
 			<section class="index img">
 				<div class="container author">
-					{{#if profile_image}}<img src="{{profile_image}}">{{/if}}
-					<h2>Hello,</h2>
+					<div>{{#if profile_image}}<img src="{{profile_image}}">{{/if}}
+					<h2>Hello,</h2></div>
 					<p>{{> biography}}</p>	
 					</nav>				
 				</div>
 			</section>
 			{{/primaryauthor}}
 		{{/get}}	
-		{{#get "posts" filter="tag:-[politics,sport,asides],featured:true" include="tags" limit="1" as |posts|}}	
+		{{#get "posts" filter="tag:hash-member" include="tags" limit="1" as |posts|}}	
 			{{#foreach posts}}	
 				{{> teaser-wide }}		
 	</article>
 			{{/foreach}}	
 		{{/get}}
-	{{#get "posts" filter="tag:marketing-operations" include="tags" limit="4" as |posts|}}
-		<article class="container info">
-			<nav class="pagination" role="navigation">
-				<a class="older-posts" href="/martech">See more <span aria-hidden="true">→</span></a>
-			</nav>	
-			<h2>Marketing Operations</h2>
-			<p>Maximise your marketing efficiency and optimise your tech stack</p>
-		</article>			
-		<article class="container grid demand-creation">			
-				{{#foreach posts}}		
-					{{> teaser }}
-				{{/foreach}}			
-		</article>	
-	{{/get}}	
-	{{#get "posts" filter="tag:demand-creation" include="tags" limit="4" as |posts|}}
-		<article class="container info">
-			<nav class="pagination" role="navigation">
-				<a class="older-posts" href="/marketing">See more <span aria-hidden="true">→</span></a>
-			</nav>	
-			<h2>Demand Marketing</h2>
-			<p>Learn, optimise and engage using modern marketing techniques</p>
-		</article>			
-		<article class="container grid demand-creation">			
-				{{#foreach posts}}		
-					{{> teaser }}
-				{{/foreach}}			
-		</article>	
-	{{/get}}
-	{{#get "posts" filter="tag:marketing-automation" include="tags" limit="4" as |posts|}}
+
+	{{#get "posts" filter="tag:martech" include="tags" limit="4" as |posts|}}
 		<article class="container info">		
 			<nav class="pagination" role="navigation">	
-				<a class="older-posts" href="/tag/marketing-automation/">See more <span aria-hidden="true">→</span></a>
+				<a class="older-posts" href="/martech">See more <span aria-hidden="true">→</span></a>
 			</nav>	
 			<h2>Marketing Technology</h2>
-			<p>News and tips from an expert in marketing automation</p>
+			<p>Discover how effective use of technology can boost marketing performance</p>
 		</article>	
 		<article class="container grid marketing-automation">			
 				{{#foreach posts}}		
@@ -76,18 +60,66 @@
 				{{/foreach}}
 		</article>
 	{{/get}}
-	{{#get "posts" filter="tag:digital-transformation" include="tags" limit="4" as |posts|}}
+
+	{{#get "posts" filter="tag:marketing-ops" include="tags" limit="4" as |posts|}}
+		<article class="container info">
+			<nav class="pagination" role="navigation">
+				<a class="older-posts" href="/marketing-ops">See more <span aria-hidden="true">→</span></a>
+			</nav>	
+			<h2>Marketing Operations</h2>
+			<p>Maximise marketing efficiency and unlock the value of marketing ops</p>
+		</article>			
+		<article class="container grid demand-creation">			
+				{{#foreach posts}}		
+					{{> teaser }}
+				{{/foreach}}			
+		</article>	
+	{{/get}}	
+
+	{{#get "posts" filter="tag:technology" include="tags" limit="4" as |posts|}}
 		<article class="container info">	
 			<nav class="pagination" role="navigation">	
 				<a class="older-posts" href="/technology">See more <span aria-hidden="true">→</span></a>
 			</nav>	
 			<h2>Digital Transformation</h2>
-			<p>Commentary on enterprise technology and it's impact on marketers</p>
+			<p>Commentary on enterprise technology and it's impact on business</p>
 		</article>
-		<article class="container grid noimg digital-transformation">			
+		<article class="container grid digital-transformation">			
 				{{#foreach posts}}		
 					{{> teaser }}
 				{{/foreach}}	
 		</article>
-	{{/get}}		
+	{{/get}} 
+
+	{{^if @member}}
+	<article class="container info">
+		<nav class="pagination" role="navigation">	
+			<a class="older-posts" href="/newsletter/">See more <span aria-hidden="true">→</span></a>
+		</nav>		
+		<h2>Get the latest martech trends straight to your inbox</h2>
+		<p>Sign up to my newsletter for actionable insights into martech and marketing ops</p>
+	</article>
+	<article class="container">	
+		<section class="index img" style="margin: 0 1% 3em;width: auto;background: #fff !important;">
+			<a href="/subscribe/" rel="prefetch"><img srcset="https://marketingviatechnology.com/content/images/size/w475/2023/08/photo-1534685785745-60a2cea0ec34.jpg 340w, https://marketingviatechnology.com/content/images/size/w750/2023/08/photo-1534685785745-60a2cea0ec34.jpg 475w, https://marketingviatechnology.com/content/images/size/w1200/2023/08/photo-1534685785745-60a2cea0ec34.jpg 750w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 340px" src="https://marketingviatechnology.com/content/images/size/w475/2023/08/photo-1534685785745-60a2cea0ec34.jpg" class="avatar" alt=""></a>
+			<div>
+			    <footer class="subscribe-form post-navigation">
+			        <h2 class="message-header" style="margin:0 0 20px"><strong>Sign up for the Marketing via Technology newsletter</strong></h2>
+			        <p class="message-header xs-hide" style="margin:0 0 20px">Get the latest martech strategies straight to your inbox. Discover how effective use of technology can accelerate demand and unlock the value of marketing operations.</p>
+			        <a href="/subscribe/" class="button" target="_blank"><span style="">Subscribe</span></a>
+			    </footer>
+				
+			</div>
+		</section>
+	</article>
+	{{/if}}
 </main>
+
+{{#if @member}}
+<script>
+	const searchParams = new URLSearchParams(window.location.search);
+	if (searchParams.get('action') == 'subscribe') {
+		window.location.href = '{{@site.url}}/subscribe-thank-you/';
+	}
+</script>
+{{/if}}	

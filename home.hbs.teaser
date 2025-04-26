@@ -1,10 +1,5 @@
 {{!< default}}
-
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
-{{! Everything inside the #post tags pulls data from the post }}
-{{#post}}
+	{{#page}}
 {{#if feature_image}}
 <style>
 	.blog-cover { background-image: url({{img_url feature_image size='xl'}}) }
@@ -17,35 +12,28 @@
 	.blog-cover { background-image: url({{@site.cover_image}}) }
 </style>
 {{/if}}{{/if}}
-<header class="blog-cover {{{custom_template}}}">
+<header class="blog-cover">
     <section>
         <div class="container">
-            <h1 class="title">{{{title}}}</h1>
+            <h1>{{{title}}}</h1>
             <h3>{{{excerpt}}}</h3>
-            <div class="social">
-                <a class="icon-tw" href="http://twitter.com/share?url=https://alanchatfield.net{{url}}&text={{encode title}}" target="_blank"><i class="fab fa-twitter fa-sm"></i></a>
-                <a class="icon-li" href="https://www.linkedin.com/shareArticle?mini=true&url=https://alanchatfield.net{{url}}&title={{encode title}}" target="_blank"><i class="fab fa-linkedin-in fa-sm"></i></a>			
-                <a class="icon-fb" href="http://www.facebook.com/sharer.php?u=https://alanchatfield.net{{url}}" target="_blank"><i class="fab fa-facebook-f fa-sm"></i></a>				
-            </div>			
         </div>
-    </section>			
+    </section>
 </header>
-
-{{! Everything below outputs content of the the post which has been published }}
-<main class="container">
-    <article>
+	{{/page}}
+	{{#if @member}}
+	<main class="container">
+	<article>		
+		{{#get "posts" filter="tag:hash-member" include="tags" limit="1" as |posts|}}	
+			{{#foreach posts}}	
         <header>
-            <h2 class="title">{{{title}}}</h2>		
+            <h2 class="title xs-show">{{{title}}}</h2>		
             <div class="meta">
                 <time pubdate datetime="{{date format="YYYY-MM-DD"}}" title="{{date format='DD MMMM YYYY'}}">{{date format='DD MMMM YYYY'}}</time> {{#if tags}}| {{tags}}{{/if}}
             </div>			
         </header>
 	
         {{content}}				
-
-		{{#if feature_image_caption}}
-			<div class="meta credit">Banner {{feature_image_caption}}</div>
-		{{/if}}
 
         <footer>
             <p class="author">
@@ -54,10 +42,25 @@
                 <span class="muted">{{{primary_author.bio}}}</span>
             </p>
         </footer>
+	</article>
+			{{/foreach}}	
+		{{/get}}
+	{{else}}
+	{{#page}}
+	<main class="container">
+	    <article>
+ 	       <header>
+ 	           <h2 class="title xs-show">{{{title}}}</h2>				
+ 	       </header>    
+ 	       {{content}}          
+ 	   </article>
+	</main>
+	{{/page}}
+	{{/if}}	
 
-    </article>
-		
-	{{> pager }}
-                         
+	<article class="container info teaser-title">				
+			<nav class="pagination" role="navigation">
+					<a class="older-posts" href="/news">See more <span aria-hidden="true">→</span></a>
+				</nav>				
+	</article>	
 </main>
-{{/post}}

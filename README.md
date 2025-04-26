@@ -1,10 +1,8 @@
-# Incorporated for Ghost
-
-![Incorporated for Ghost](http://l.jwr.vc/uTpo+)
-
-### [→ Download](https://github.com/alanchatfield/alanchatfield.net/releases/latest)
+# Marketing via Technology Theme for Ghost
 
 > A [Ghost](https://ghost.org/) theme which provides great typography, responsive design, author details, semantic markup and more. It is a heavily modified version of [Incorporated for Ghost](https://github.com/jamesramsay/ghost-incorporated) by James Ramsey, which is itself a port for the most part of [Jekyll Incorporated](https://github.com/kippt/jekyll-incorporated) by Kippt, Inc.
+
+### [→ Download](https://github.com/alanchatfield/alanchatfield.net/releases/latest)
 
 ## Table of Contents
 
